@@ -3,9 +3,8 @@ package core.basesyntax;
 import java.util.Random;
 
 public class Lottery {
+    private static final int MAX_BALL_NUMBER = 100;
     public Ball getRandomBall() {
-        int randomNumber = new Random().nextInt(100);
-        ColorSupplier colorSupplier = new ColorSupplier();
-        return new Ball(colorSupplier.getRandomColor(),randomNumber);
+        return new Ball(new ColorSupplier().getRandomColor(), new Random().nextInt(MAX_BALL_NUMBER));
     }
 }
